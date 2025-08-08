@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Bungee", sans-serif;
+    background-color: #463F3A;
+    color: #F4F3EE;
+}
+
+h1 {
+    margin-top: 0;
+    transition: 500ms;
+}
+
+h1:hover
+{
+    text-decoration:underline;
+    text-underline-offset: 10px;
+    font-size: 3em;
+}
+
+header {
+    width: 100%;
+    text-align: left;
+    background: url(images/HeaderBackground.jpg) no-repeat center center;
+    background-size: cover; 
+    height: 200px;
+    color: #F4F3EE;
+    text-shadow: 5px 5px 5px black;
+    padding: 15px 50px 30px;
+    box-sizing: border-box;
+}
+
+
+main {
+    max-width: 900px;
+    margin: 10px 80px ;
+    padding: 50px;
+    background-color: #463F3A;
+    text-align: center;
+}
+
+.emoji
+{
+    font-size: 8em;
+}
+
+.menuOptions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+
+    width: 150vh;
+
+    border-bottom: #F4F3EE 1px solid;
+}
+
+.buttonPop
+{
+    background: none;
+    border: 1px solid #F4F3EE;
+    border-radius: 50%;
+    padding: 15px 20px;
+    font-size: 25px;
+    font-weight: lighter;
+    font-family: sans-serif;
+    color: #F4F3EE;
+    transition: 500ms;
+}
+
+.buttonPop:hover
+{
+    cursor: pointer;
+    color: #463F3A;
+    background-color: #F4F3EE;
+    box-shadow: 0px 0px 15px#F4F3EE;
+
+}
