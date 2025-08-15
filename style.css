@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    max-width: 100%;
 }
 
 body {
@@ -15,9 +16,8 @@ h1 {
     transition: 500ms;
 }
 
-h1:hover
-{
-    text-decoration:underline;
+h1:hover {
+    text-decoration: underline;
     text-underline-offset: 10px;
     font-size: 3em;
 }
@@ -34,17 +34,15 @@ header {
     box-sizing: border-box;
 }
 
-
 main {
     max-width: 900px;
-    margin: 10px 80px ;
+    margin: 10px 80px;
     padding: 50px;
     background-color: #463F3A;
     text-align: center;
 }
 
-.emoji
-{
+.emoji {
     font-size: 8em;
 }
 
@@ -54,14 +52,11 @@ main {
     justify-content: space-between;
     gap: 20px;
     padding: 20px 0;
-
-    width: 150vh;
-
+    width: 100%;
     border-bottom: #F4F3EE 1px solid;
 }
 
-.buttonPop
-{
+.buttonPop {
     background: none;
     border: 1px solid #F4F3EE;
     border-radius: 50%;
@@ -73,11 +68,138 @@ main {
     transition: 500ms;
 }
 
-.buttonPop:hover
-{
+.buttonPop:hover {
     cursor: pointer;
     color: #463F3A;
     background-color: #F4F3EE;
-    box-shadow: 0px 0px 15px#F4F3EE;
+    box-shadow: 0px 0px 15px #F4F3EE;
+}
 
+.confirmDiv {
+    background-color: #5A534F;
+    padding: 20px;
+    margin: 30px auto 0 auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(244, 243, 238, 0.2);
+    text-align: left;
+    max-width: 500px;
+}
+
+.confirmDiv h1 {
+    font-size: 1.5em;
+    margin: 0 0 15px 0;
+    border-bottom: 2px solid #F4F3EE;
+    padding-bottom: 10px;
+}
+
+.confirmItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.remove-btn {
+    color: #F4F3EE;
+    font-size: 0.8em;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.remove-btn:hover {
+    color: #FF6B6B;
+}
+
+.totalPriceDiv {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 2px solid #F4F3EE;
+}
+
+.finishOrderBtn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #F4F3EE;
+    color: #463F3A;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.finishOrderBtn:hover {
+    background-color: #E1DED9;
+    box-shadow: 0px 0px 10px #F4F3EE;
+}
+
+/*  Payment Form  */
+.payOrder {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #5A534F;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(244, 243, 238, 0.2);
+    text-align: left;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.payOrder h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.payOrder input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #F4F3EE;
+    color: #463F3A;
+    font-size: 1em;
+}
+
+.payOrder input:focus {
+    outline: 2px solid #E1DED9;
+}
+
+.payBtn {
+    background-color: #F4F3EE;
+    color: #463F3A;
+    border: none;
+    padding: 12px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.payBtn:hover {
+    background-color: #E1DED9;
+    box-shadow: 0px 0px 10px #F4F3EE;
+}
+
+/*  Confirmation Message  */
+.orderMessage {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #5A534F;
+    border-radius: 8px;
+    font-size: 1.2em;
+    text-align: center;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 10px rgba(244, 243, 238, 0.2);
 }
