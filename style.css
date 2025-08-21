@@ -1,14 +1,15 @@
 * {
     box-sizing: border-box;
-    max-width: 100%;
+    text-align: center;
 }
 
 body {
-    margin: 0;
+    margin: auto;
     padding: 0;
     font-family: "Bungee", sans-serif;
     background-color: #463F3A;
     color: #F4F3EE;
+    max-width: 50%;
 }
 
 h1 {
@@ -19,14 +20,14 @@ h1 {
 h1:hover {
     text-decoration: underline;
     text-underline-offset: 10px;
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 header {
     width: 100%;
     text-align: left;
     background: url(images/HeaderBackground.jpg) no-repeat center center;
-    background-size: cover; 
+    background-size: cover;
     height: 200px;
     color: #F4F3EE;
     text-shadow: 5px 5px 5px black;
@@ -35,7 +36,6 @@ header {
 }
 
 main {
-    max-width: 900px;
     margin: 10px 80px;
     padding: 50px;
     background-color: #463F3A;
@@ -56,7 +56,7 @@ main {
     border-bottom: #F4F3EE 1px solid;
 }
 
-.buttonPop {
+.addButton {
     background: none;
     border: 1px solid #F4F3EE;
     border-radius: 50%;
@@ -68,14 +68,14 @@ main {
     transition: 500ms;
 }
 
-.buttonPop:hover {
+.addButton:hover {
     cursor: pointer;
     color: #463F3A;
     background-color: #F4F3EE;
     box-shadow: 0px 0px 15px #F4F3EE;
 }
 
-.confirmDiv {
+.cart {
     background-color: #5A534F;
     padding: 20px;
     margin: 30px auto 0 auto;
@@ -83,34 +83,38 @@ main {
     box-shadow: 0px 0px 10px rgba(244, 243, 238, 0.2);
     text-align: left;
     max-width: 500px;
+    display: none; /* Hidden initially */
 }
 
-.confirmDiv h1 {
+.cart h1 {
     font-size: 1.5em;
     margin: 0 0 15px 0;
     border-bottom: 2px solid #F4F3EE;
     padding-bottom: 10px;
 }
 
-.confirmItem {
+.cart-user-order li {
     display: flex;
     justify-content: space-between;
     padding: 8px 0;
+    list-style: none;
 }
 
-.remove-btn {
+.removeButton {
     color: #F4F3EE;
     font-size: 0.8em;
     margin-left: 10px;
     cursor: pointer;
+    background: none;
+    border: none;
     transition: color 0.3s;
 }
 
-.remove-btn:hover {
+.removeButton:hover {
     color: #FF6B6B;
 }
 
-.totalPriceDiv {
+.cart-user-total {
     display: flex;
     justify-content: space-between;
     font-size: 1.2em;
@@ -119,7 +123,7 @@ main {
     border-top: 2px solid #F4F3EE;
 }
 
-.finishOrderBtn {
+.cart-completeOrderBtn {
     width: 100%;
     padding: 12px;
     margin-top: 20px;
@@ -133,43 +137,67 @@ main {
     transition: 0.3s;
 }
 
-.finishOrderBtn:hover {
+.cart-completeOrderBtn:hover {
     background-color: #E1DED9;
     box-shadow: 0px 0px 10px #F4F3EE;
 }
 
-/*  Payment Form  */
-.payOrder {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-    margin-top: 20px;
+/* Payment Popup Modal */
+.pay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal content box */
+#pay-modal {
     background-color: #5A534F;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(244, 243, 238, 0.2);
-    text-align: left;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.payOrder h2 {
-    margin-bottom: 10px;
-    font-size: 1.5em;
+    box-shadow: 0px 0px 20px rgba(244, 243, 238, 0.8);
+    width: 350px;
     text-align: center;
+    position: relative;
 }
 
-.payOrder input {
-    padding: 10px;
+/* Close button */
+.closeModal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    color: #F4F3EE;
+    background: none;
     border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.closeModal:hover {
+    color: #FF6B6B;
+}
+
+#pay-modal h2 {
+    margin-bottom: 15px;
+}
+
+#pay-modal input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px;
     border-radius: 5px;
-    background-color: #F4F3EE;
-    color: #463F3A;
+    border: none;
     font-size: 1em;
 }
 
-.payOrder input:focus {
+#pay-modal input:focus {
     outline: 2px solid #E1DED9;
 }
 
@@ -178,6 +206,7 @@ main {
     color: #463F3A;
     border: none;
     padding: 12px;
+    width: 100%;
     font-size: 1em;
     border-radius: 5px;
     cursor: pointer;
@@ -190,7 +219,7 @@ main {
     box-shadow: 0px 0px 10px #F4F3EE;
 }
 
-/*  Confirmation Message  */
+/* Confirmation Message */
 .orderMessage {
     margin-top: 20px;
     padding: 15px;
@@ -202,4 +231,5 @@ main {
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0px 0px 10px rgba(244, 243, 238, 0.2);
+    display: none;
 }

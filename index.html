@@ -23,26 +23,44 @@
     </header>
 
     <main>
-        <div class="menu" id="menu">
-            <!--Menu-->
-        </div>
+        <!-- Display Menu -->
+        <section class="menu" id="menu"></section>
 
-        <div class="confirmOrder" id="confirmOrder">
-            <!--Confirms Orders-->
-        </div>
+        <!-- Cart Section -->
+        <section class="cart" id="cart">
+            <h1>Your Order</h1>
+            <ul id="cart-user-order" class="cart-user-order">
+                <!-- Customer's items go here -->
+            </ul>
 
-        <form class="payOrder" id="payOrder">
-            <h2>Enter Your Card Details</h2>
-            <input type="text" placeholder="Enter Your Name" id="customerName" name="customerName" required />
-            <input type="text" placeholder="Enter Your Card Number" id="customerCardNumber" required />
-            <input type="text" placeholder="Enter Your Social Security Number" id="customerSSN" required />
-            <button type="submit" class="payBtn" id="payBtn">Pay</button>
-        </form>
-        <h2 class="orderMessage" id="orderMessage"></h2>
+            <div class="cart-user-total">
+                <h2>Total Price:</h2>
+                <h2 id="cart-user-total-amount">$0</h2>
+            </div>
 
-        <footer><p><span id="yearUpdate"></span> YedYederYedest Softwares</p></footer>
+            <button class="cart-completeOrderBtn" id="cart-completeOrderBtn">Complete Order</button>
+        </section>
+
+        <!-- Payment Modal -->
+        <section class="pay" id="pay">
+            <form id="pay-modal">
+                <button type="button" class="closeModal" id="closeModal">&times;</button>
+                <h2>Enter Your Card Details</h2>
+                <input type="text" placeholder="Enter Your Name" id="customerName" name="customerName" required />
+                <input type="number" placeholder="Enter Your Card Number" required />
+                <input type="number" placeholder="Enter Your Social Security Number" required />
+                <button type="submit" class="payBtn" id="payBtn">Pay</button>
+            </form>
+        </section>
+
+        <!-- Order Confirmation -->
+        <section class="orderMessage" id="orderMessage">
+            <h2 id="orderMessage-paid">Thank you! Your order is on its way!</h2>
+        </section>
     </main>
 
-    <script src="index.js" type="module"></script>
+    <footer><p><span id="yearUpdate"></span> YedYederYedest Softwares</p></footer>
+
+    <script src="./Javascript/index.js" type="module"></script>
 </body>
 </html>
